@@ -299,6 +299,6 @@
   }
 
   function reiniciar() {
-window.location.href  = "https://flaviooliveira35.github.io/GeradorEtiquetasV2/"
+window.location.href  = "https://flaviooliveira35.github.io/AppGeradorEtiqueta/"
   }
 
