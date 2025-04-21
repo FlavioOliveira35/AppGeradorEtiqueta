@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Ocorrência</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="STYLE.CSS">
+  <link rel="stylesheet" href="cards.CSS">
+  
+</head>
+
+<body>
+  
+  <!-- Tela de abertura  CARDS-->
+  <div id="telaAbertura"> 
+    
+  
+    <button onclick="iniciarApp()">INICIAR</button>
+    <p>Gerador de Etiqueta</p>
+
+    <div class="container">
+      <div class="card">
+        <div class="icon">◉</div>
+        <div class="label">Informativos</div>
+      </div>
+      <div class="card">
+        <div class="icon">⎙</div>
+        <div class="label">Sugestão Melhorias</div>
+      </div>
+      <div class="card">
+        <div class="icon">⇄</div>
+        <div class="label">Plantão Sáb/Dom</div>
+      </div>
+      <div class="card">
+          <div class="icon">⇄</div>
+          <div class="label">Padrão </div>
+        </div>
+        <div class="card">
+          <div class="icon">⇄</div>
+          <div class="label">Fotos Padrão</div>
+        </div>
+        
+      <div class="card">
+        <div class="icon">ⓘ</div>
+        <div class="label">Outros</div>
+      </div>
+    </div>
+  </div>
+
+    <!-- editar uf em 2 caixas diferentes -->
+
+
+
+
+<div class="form-container">
+  <div id="retorno" class="flex-row">
+    <div class="flex-item">
+    <button id="botaoEditar" onclick="alternarCaixas()">Sul</button>
+    <button id="botaoEditarlivre" onclick="alternarCaixaslivre()">Editar OFF</button>
+    <button id="reiniciar" onclick="reiniciar()">Novo</button>
+    </div>
+    </div>
+
+  <div class="titulo-alerta"> ⚙️ GERADOR DE ETIQUETA</div>
+  <div class="titulo-alertaSC">OSP Santa Catarina</div>
+  <!-- <div>
+    <a href="https://flaviooliveira35.github.io/geradorEtiquetas/" target="_blank">
+      <button id="btnv1"> Versão 01</button>
+    </a>
+  </div> -->
+  <form action="https://formsubmit.co/flavio.coliveira@telefonica.com" method="POST">
+    <!-- Dados ocultos para configuração -->
+    <input type="hidden" name="_cc" value="flavio_cesar_oliveira@hotmail.com"> <!-- Remova ou altere se não quiser CCO -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_subject" value="Nova Ocorrência Encerrada">
+    <input type="hidden" name="_autoresponse" value="Sua ocorrência foi recebida com sucesso.">
+    <input type="hidden" name="_next" value="https://flaviooliveira35.github.io/GeradorEtiquetasV2/">
+    <!--<input type="hidden" name="_next" value="https://sua-url-de-sucesso.com">  -->
+    
+    <!-- Campos visíveis no formulário -->
+    <input type="hidden" name="Ocorrência" id="emailOcorrencia">
+    <input type="hidden" name="Cluster" id="emailCluster">
+  
+    <button id="btnsubmit" type="submit" class="submit-btn" style="display:none" onclick="prepararEnvio()">Enviar por E-mail</button>
+  </form>
+
+
+
+
+
+  <!-- cluster, cidade e eps na mesma linha caixa 1 sc -->
+  <div id="Caixa1" class="flex-row">
+    <div class="flex-item">
+  <label>Cluster:</label>
+  <select id="codigo11" onchange="atualizaCodigo22()">
+    <option value="">-- Selecione --</option>
+    <option value="Florianopolis">Florianopolis</option>
+    <option value="Blumenau">Blumenau</option>
+    <option value="Joinville">Joinville</option>
+    <option value="Chapeco">Chapeco</option>
+    <option value="Lages">Lages</option>
+
+  </select>
+</div>
+
+<div class="flex-item">
+  <label>Cidade:</label>
+  <select id="codigo22">
+    <option>-- Selecione --</option>
+  </select>
+</div>
+
+<div class="flex-item">
+  <label>EPS:</label>
+  <select id="eps"> 
+    <option value="">-- Selecione --</option>   
+    <option value="VIVO">VIVO</option>
+    <option value="TLP">TLP</option>
+    <option value="RS TELECOM">RS TELECOM</option>
+    <option value="ABILITY">ABILITY</option>
+    <option value="TLSV">TLSV</option>
+  </select>
+</div>
+</div>
+<!-- cluster, cidade e eps na mesma linha caixa 1 SC  FIM -->
+
+<!-- cluster, cidade e eps na mesma linha caixa 1 rs/cta  INICO-->
+<div id="Caixa2" class="flex-row">
+  <div class="flex-item">
+<label>Cluster:</label>
+<select id="codigo11111" onchange="atualizaCodigo22222()">
+  <option value="">-- Selecione --</option>
+  <option value="Curitiba">Curitiba</option>
+  <option value="Londrina">Londrina</option>
+  <option value="Maringa">Maringa</option>
+  <option value="Caxias do Sul">Caxias do Sul</option>
+  <option value="Canoas">Canoas</option>
+  <option value="Santa Maria">Santa Maria</option>
+  <option value="Novo hamburgo">Novo hamburgo</option>
+  <option value="Foz do Iguaçu">Foz do Iguaçu</option>
+  <option value="Cascavel">Cascavel</option>
+  <option value="Pelotas">Pelotas</option>
+  <option value="Ponta Grossa">Ponta Grossa</option> 
+
+</select>
+</div>
+
+<div class="flex-item">
+<label>Cidade:</label>
+<select id="codigo22222">
+  <option>-- Selecione --</option>
+</select>
+</div>
+
+<div class="flex-item">
+<label>EPS:</label>
+<select id="eps_rs"> 
+  <option value="">-- Selecione --</option>   
+  <option value="VIVO">VIVO</option>
+  <option value="TLP">TLP</option>
+  <option value="RS TELECOM">RS TELECOM</option>
+  <option value="ABILITY">ABILITY</option>
+  <option value="TLSV">TLSV</option>
+</select>
+</div>
+</div>
+
+<!-- cluster, cidade e eps na mesma linha caixa 1 rs/cta  FIM -->
+
+
+<!-- cluster, cidade e eps na mesma linha caixa 1 livre  INICO-->
+<div id="Caixa3" class="flex-row">
+<div class="flex-item">
+<label>Cluster:</label>
+<input type="text" id="codigo11111livre">
+</div>
+
+<div class="flex-item">
+<label>Cidade:</label>
+<input type="text" id="codigo22222livre">
+</div>
+
+<div class="flex-item">
+<label>EPS:</label>
+<input type="text" id="epslivre">
+</div>
+</div>
+
+
+<!-- cluster, cidade e eps na mesma linha caixa 1 livre  FIM -->
+
+  <div class="flex-row">
+    <div class="flex-item">
+        <label>OCORRÊNCIA:</label>
+        <input type="text" id="ocorrencia" placeholder="Ex: 4852525" required>
+    </div>
+
+  
+    <div class="flex-item">
+      <label>ARD:</label>
+      <input type="text" id="ard" placeholder="Ex: M24">
+    </div>
+    <div class="flex-item">
+      <label>SP:</label>
+      <input type="text" id="sp" placeholder="Ex:101 até 105">
+    </div>
+  </div>
+
+
+  <div class="flex-row">
+    <div class="flex-item">
+
+  <label>CAUSA:</label>
+  <select id="codigo1" onchange="atualizaCodigo2()">
+    <option value="">-- Selecione --</option>
+    <option value="abalroamento">Abalroamento</option>
+    <option value="Furto">Furto</option>
+    <option value="Acidente">Acidente</option>
+    <option value="Descarga">Descarga</option>
+    <option value="Vandalismo">Vandalismo</option>
+    <option value="Troca de poste">Troca de poste</option>
+    <option value="Degradação/Infiltração">Degradação/Infiltração</option>
+    <option value="Defeito Splitter">Defeito Splitter</option>
+    <option value="Falha em atividade anterior">Falha em atividade anterior</option>
+    <option value="Obras de Terceiros">Obras de Terceiros</option>
+    <option value="INTERPÉRIE">Interpérie</option>
+    <option value="Ataques de Animais">Ataques de Animais</option>
+    <option value="Sem defeito para rede">Sem defeito para rede</option>
+  </select>
+</div>
+
+  <div class="flex-item">
+  <label>SUB CAUSA:</label>
+  <select id="codigo2">
+    <option >-- Selecione Causa primeiro --</option>
+  </select>
+</div>
+</div>
+
+<label>DESCREVER COMO EVITAR O EVENTO:</label>
+<input type="text" id="MOTIVO" placeholder="Ex: Levantar de cabo tronco / Aplicar cordoalha / Alterar de trajeto/Aplicar PEAD/ etc...">
+
+  <label>TRATATIVA:</label>
+  <input type="text" id="tratativa" placeholder="Ex: Refeito fusão">
+
+  <label>MATERIAIS UTILIZADOS:</label>
+  <textarea id="materiais" rows="2"
+   placeholder="Ex: 200 mt de fibra / 4 Tubetes / 1 PEAD / ... ou
+    Pode inserir nessa linha tambem"></textarea>
+
+  <div class="flex-row">
+<div class="flex-item">
+  <label>ENDEREÇO:</label>
+  <input type="text" id="endereco">
+</div>
+
+<div class="flex-item">    <label>Nº:</label>
+    <input type="text" id="NUMERODAFACHADA">
+ </div>
+
+<div class="flex-item">
+    <label>BAIRRO:</label>
+    <input type="text" id="bairro">
+</div>
+
+</div>
+
+<label>TÉCNICOS:</label>
+<input type="text" id="TECNICO">
+
+
+
+  <label>ENTREGA NO PRAZO?</label>
+  <div class="prazo-buttons">
+    <div class="prazo-btn" onclick="selecionarPrazo(this, 'Dentro do Prazo')">Dentro do Prazo</div>
+    <div class="prazo-btn" onclick="selecionarPrazo(this, 'Fora do Prazo')">Fora do Prazo</div>
+  </div>
+  <input type="hidden" id="prazoSelecionado">
+
+  <label id="labelJustificativa" style="display:none;">Justificativa (se fora do prazo):</label>
+  <textarea id="justificativa" rows="2" placeholder="Ex:Perdemos o prazo devido a chuva"></textarea>
+
+  <button onclick="copiarTexto()" class="submit-btn">Copiar para WhatsApp</button>
+  <div class="final-space"></div>
+
+  <div class="footer">Versão 2.0 - Desenvolvido para uso interno </div>
+</div>
+
+
+<script src="script.js"></script>
+<script src="cards.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

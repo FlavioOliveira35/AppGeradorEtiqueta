@@ -1,0 +1,299 @@
+   
+    /* Estilo da tela de abertura */
+    #telaAbertura {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, #3b1447, #9127b1);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      text-align: center;
+    }
+
+    /* Cabeçalho no topo */
+    #telaAbertura header {
+      position: absolute;
+      top: 30px;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* Botão central redondo e pulsante */
+    #telaAbertura button {
+      background-color: #ffffff;
+      color: #6d196d;
+      border: none;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 0 rgba(255,255,255, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    #telaAbertura button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Animação pulsante */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255,255,255, 0.5);
+      }
+      70% {
+        box-shadow: 0 0 0 35px rgba(255,255,255, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+      }
+    }
+
+    /* Conteúdo do app escondido por padrão */
+    #app {
+      display: none;
+      padding: 20px;
+    }
+
+  
+ /* ----------------------------------------------*/
+   body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e5ddd5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+    }
+
+    .form-container {
+      background-color: #e4c0e7;
+      max-width: 100%;
+      width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(71, 35, 63, 0.2);
+      border-left: 5px solid #470b5f;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 8px;
+      display: block;
+      font-size: 12px;
+      padding-left: 8px;
+    }
+    /*#btnv1{
+      cursor: pointer;
+      padding: 3px;
+      box-sizing: border-box;
+      box-shadow: 2px 2px 5px rgba(71, 35, 63, 0.2);
+      font-size: 11px;
+      color: #470b5f;
+     position: fixed;
+     bottom: 10px;
+     right: 10px;
+      
+    }*/
+
+    input::placeholder,textarea::placeholder,option::placeholder {
+      color: #bdbbbd;
+      opacity: 1;
+    }
+   
+
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      font-size: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      box-shadow: 2px 2px 5px rgba(71, 35, 63, 0.2);
+    }
+
+    input:hover, select:hover, textarea:hover {
+      border: 1px solid #441044;
+      cursor: pointer;
+    }
+
+    .titulo-alerta {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: rgb(71, 16, 71);
+      margin-bottom: 5px;
+    }
+
+    .titulo-alertaSC {
+      text-align: center;
+      font-size: 10px;
+      font-weight: bold;
+      color: rgb(113, 73, 189);
+      margin-bottom: 15px;
+    }
+
+    .prazo-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .prazo-btn {
+      flex: 1;
+      padding: 8px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 2px 2px 5px rgba(71, 35, 63, 0.2);
+    }
+
+    .prazo-btn.selected {
+      background-color: #6b198b;
+      color: white;
+    }
+
+    #justificativa {
+      display: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 24px;
+      background-color: #43a047;
+      color: white;
+      border: none;
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 2px 2px 5px rgba(71, 35, 63, 0.2);
+    }
+
+    .submit-btn:hover {
+      background-color: #388e3c;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #0a0a0a;
+      margin-top: 20px;
+    }
+
+    /* Adicionado: Flexbox para alinhar os campos na mesma linha */
+    .flex-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .flex-item {
+      flex: 1;
+    }
+
+    #NUMERODAFACHADA {
+        width: 40pt;
+        
+    }
+
+
+    #endereco {
+        width: 140pt;
+    }
+
+    #bairro {
+        width: 60pt;
+    }
+    #tecnicos{
+      width: 200pt;
+      background-color: rgba(105, 105, 105, 0.507);
+      border: 0px solid rgba(233, 218, 233, 0);
+      cursor: not-allowed;
+
+
+    }
+    #codigotecnico{
+      width: 150pt;
+
+    }
+
+    #btntec{
+      cursor: pointer;
+      text-align: center;
+      justify-content: center;
+      box-shadow: 2px 2px 5px rgba(71, 35, 63, 0.2);
+      margin-top: 25px;
+       width: 20pt;
+       height: 20pt;
+       padding: 1px;
+       border-radius: 20px;
+       background-color: #a79393;
+       color: white;
+       border: none;
+    }
+    #btntec:hover {
+      border: 1px solid #a82b2b;
+      cursor: pointer;
+      background-color: #bd1212;
+    }
+
+    #Caixa1 {
+      border: 1 px solid #ccc;
+
+    }
+    
+    
+    #botaoEditar, #botaoEditarlivre, #reiniciar{
+      flex: 1;
+      font-size: 10px;
+      padding: 4px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background-color: #975f9c;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 2px 2px 5px rgba(71, 35, 63, 0.2);
+      width: 60px;
+    }
+
+       
+    #Caixa2, #Caixa3 {
+      display: none;
+
+    }
+
+    #reiniciar:hover {
+      background-color: #d41f07;
+      color: white;
+    }
+
+     #botaoEditarlivre:Hover, #botaoEditar:Hover {
+      background-color: #6b198b;
+      color: white;
+    }
+
+    #retorno{
+      padding-bottom: 10px;
+    }
